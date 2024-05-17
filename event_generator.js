@@ -299,10 +299,10 @@ function generate_sort_events (array) {
 
     // quick_sort(0, array.length);
     // merge_sort(0, array.length);
-    // selection_sort();
+    selection_sort();
     // bubble_sort();
     // radix_sort(0);
-    heap_sort();
+    // heap_sort();
 
     // ====================================================
 

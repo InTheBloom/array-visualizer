@@ -1,10 +1,13 @@
-function initialize () {
-    screen = document.getElementById("screen");
-    screen.width = width;
-    screen.height = height;
-    visualize_start_button.addEventListener("click", start_visualize);
+class ArrayOperations {
 }
 
+// timer setting (1ms / x ms)
+let time_speed;
+// array operation sleeptime
+let sleep_time_ms;
+
+
+// 工事中...
 // This function is called when the button is pressed.
 function start_visualize () {
     const N = parseInt(array_size_input.value);
@@ -65,15 +68,4 @@ function start_visualize () {
     draw_screen();
 }
 
-document.addEventListener("DOMContentLoaded", initialize);
 
-// canvas element
-let screen;
-const width = 1000;
-const height = 500;
-
-// timer setting (1ms / x ms)
-let time_speed;
-
-// array operation sleeptime
-let sleep_time_ms;

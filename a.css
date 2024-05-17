@@ -1,8 +1,0 @@
-#screen {
-    border : 1px black solid;
-}
-
-.input_container {
-    display : flex;
-    flex-direction : column;
-}
