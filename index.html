@@ -8,8 +8,10 @@
 
         <script src="main.js"></script>
         <script src="screen.js"></script>
-        <script src="animation.js"></script>
-        <script src="event_generator.js"></script>
+        <script src="operations.js"></script>
+        <script src="array_animation.js"></script>
+        <script src="monitored_array.js"></script>
+        <script src="tracking_array.js"></script>
     </head>
 
     <body>
@@ -25,26 +27,45 @@
                 const y = document.getElementById("html_screen_width_ratio_input")
                 y.innerHTML = x.value;
 
-                x.addEventListener("input", (e) => { y.innerHTML = e.target.value; });</script>
+                x.addEventListener("input", (e) => { y.innerHTML = e.target.value; });
+            </script>
         </div>
 
+        <div>
+            <p>Total assigns: <span id="total_assigns"></span>times</p>
+            <p>Total array accesses: <span id="total_accesses"></span>times</p>
+            <p>Total comparisons: <span id="total_comparisons"></span>times</p>
+        </div>
         <canvas id="screen" style="border: 1px black solid"></canvas>
 
         <div>
-            <p>要素数</p>
-            <input type="number" value="30" id="array_size_input">
+            <button id="start_button">start</button>
+        </div>
+        <div style="display: flex;">
+            <div style="padding-right: 1rem;">
+                <p>要素数</p>
+                <input type="number" value="30" id="array_size_input">
+                <div>
+                    <input type="checkbox" id="allow_duplication_input">
+                    <label>要素の重複を許可</label>
+                </div>
+            </div>
+            <div style="padding-right: 1rem;">
+                <p>操作</p>
+                <select name="" id="operation_selection_input">
+                    <option>配列に対する操作を選択してください</option>
+                    <option>quick sort</option>
+                    <option>merge sort</option>
+                    <option>msb radix sort</option>
+                    <option>selection sort</option>
+                    <option>bubble sort</option>
+                </select>
+            </div>
         </div>
 
         <div>
             <p>再生速度</p>
-            <input type="range" id="time_speed_input" min="1" max="1000" step="1" style="width : 50%;">
+            <input type="range" id="speed_input" min="0.01" max="5" step="0.01" style="width : 50%;">
         </div>
-
-        <div>
-            <p>操作遅延</p>
-            <input type="range" id="sleep_time_ms_input" min="0" max="0.2" step="0.0001" style="width : 50%;">
-        </div>
-
-        <button id="visualize_start_button">Start visualize</button>
     </body>
 </html>
