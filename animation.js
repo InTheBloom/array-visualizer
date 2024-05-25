@@ -1,4 +1,37 @@
-class ArrayOperations {
+class AnimationConfig {
+    fps = 60;
+    sleep_ms = 1;
+
+    set_sleep_input (input_form) {
+        input_form.addEventListener("input", (e) => {
+            this.sleep_ms = parseInt(e.target.value);
+        });
+    }
+
+    set_fps_input (input_form) {
+        input_form.addEventListener("input", (e) => {
+            this.fps = parseInt(e.target.value);
+        });
+    }
+}
+
+class Animation {
+    is_running = false;
+    current_potision = 0;
+    animation_config;
+    array_events;
+
+    set_config (config) {
+        this.animation_config = config;
+    }
+
+    set_array_events (events) {
+        this.array_events = events;
+    }
+
+    draw_current_frame (screen) {
+        // do something
+    }
 }
 
 // timer setting (1ms / x ms)
